@@ -15,7 +15,10 @@ public class ArmSubsystem extends SubsystemBase {
   /** Creates a new ExampleSubsystem. */
   public ArmSubsystem() {}
 
-
+  //This method sets motor movement speed
+  public void moveMotor(double speed) {
+    armMotor.set(speed);
+  }
 
   
   @Override
