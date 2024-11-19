@@ -5,12 +5,16 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.ArmSubsystem;
+
+import java.util.function.Supplier;
+
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
 public class MoveArmCommand extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
-  private final ArmSubsystem m_subsystem;
+  private final ArmSubsystem arm; //This respresents the arm subsystem
+  private final Supplier<Double> speedFunction; //This represents the function to get speed for the motor
 
   /**
    * Creates a new ExampleCommand.
