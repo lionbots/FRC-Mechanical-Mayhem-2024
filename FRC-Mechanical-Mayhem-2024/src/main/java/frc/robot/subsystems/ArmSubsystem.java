@@ -10,6 +10,8 @@ import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 public class ArmSubsystem extends SubsystemBase {
+  //This represents the motor control for the arm motor
+  private final CANSparkMax armMotor = new CANSparkMax(0, MotorType.kBrushed);
   /** Creates a new ExampleSubsystem. */
   public ArmSubsystem() {}
 
