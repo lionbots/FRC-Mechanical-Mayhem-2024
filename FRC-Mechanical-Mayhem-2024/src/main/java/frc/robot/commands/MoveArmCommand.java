@@ -21,10 +21,11 @@ public class MoveArmCommand extends Command {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public MoveArmCommand(ArmSubsystem subsystem) {
-    m_subsystem = subsystem;
+  public MoveArmCommand(ArmSubsystem arm, Supplier<Double> speedFunction) {
+    this.arm = arm;
+    this.speedFunction = speedFunction;
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
+    addRequirements(arm);
   }
 
   // Called when the command is initially scheduled.
