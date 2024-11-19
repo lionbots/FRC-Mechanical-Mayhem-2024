@@ -4,18 +4,19 @@
 
 package frc.robot.subsystems;
 
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 public class ArmSubsystem extends SubsystemBase {
-  //This represents the motor control for the arm motor
+  // This represents the motor control for the arm motor
   private final CANSparkMax armMotor = new CANSparkMax(0, MotorType.kBrushed);
   /** Creates a new ExampleSubsystem. */
-  public ArmSubsystem() {}
+  public ArmSubsystem() {
+    armMotor.setSmartCurrentLimit(30);
+  }
 
-  //This method sets motor movement speed
+  // This method sets motor movement speed
   public void moveMotor(double speed) {
     armMotor.set(speed);
   }
