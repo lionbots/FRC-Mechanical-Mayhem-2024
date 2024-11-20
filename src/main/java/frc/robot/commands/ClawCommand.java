@@ -8,7 +8,7 @@ import frc.robot.subsystems.ClawSubsystem;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
-public class ExampleCommand extends Command {
+public class ClawCommand extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final ClawSubsystem m_subsystem;
 
@@ -17,7 +17,7 @@ public class ExampleCommand extends Command {
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ExampleCommand(ClawSubsystem subsystem) {
+  public ClawCommand(ClawSubsystem subsystem) {
     m_subsystem = subsystem;
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(subsystem);
