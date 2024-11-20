@@ -33,7 +33,9 @@ public class ArcadeDriveCommand extends Command{
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    driveBase.drive(speed.get(), rotation.get());
+  }
 
   // Called once the command ends or is interrupted.
   @Override
