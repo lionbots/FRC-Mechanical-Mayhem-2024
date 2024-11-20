@@ -17,10 +17,14 @@ public class ArcadeDriveCommand extends Command{
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ExampleCommand(DriveBase subsystem) {
-    m_subsystem = subsystem;
+  public ArcadeDriveCommand(DriveBase driveBase, Supplier<Double> speed, Supplier<Double> rotation, Supplier<Double> backwardsSpeed) {
+    this.driveBase = driveBase;
+    this.speed = speed;
+    this.rotation = rotation;
+    this.backwardsSpeed = backwardsSpeed;
+
     // Use addRequirements() here to declare subsystem dependencies.
-    addRequirements(subsystem);
+    addRequirements(driveBase);
   }
 
   // Called when the command is initially scheduled.
