@@ -34,7 +34,10 @@ public class MoveArmCommand extends Command {
 
   // Called every time the scheduler runs while the command is scheduled.
   @Override
-  public void execute() {}
+  public void execute() {
+    //Call method to move arm and gets the speed from the speedFunction
+    arm.moveMotor(speedFunction.get()); 
+  }
 
   // Called once the command ends or is interrupted.
   @Override
