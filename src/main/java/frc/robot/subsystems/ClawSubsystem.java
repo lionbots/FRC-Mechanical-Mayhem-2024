@@ -28,6 +28,10 @@ public class ClawSubsystem extends SubsystemBase {
         });
   }
 
+  public void setSpeed(double speed) {
+    clawMotor.set(speed);
+  }
+
   /**
    * An example method querying a boolean state of the subsystem (for example, a digital sensor).
    *
