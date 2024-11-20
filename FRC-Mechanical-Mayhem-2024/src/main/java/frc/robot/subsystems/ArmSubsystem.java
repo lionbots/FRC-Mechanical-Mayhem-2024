@@ -6,6 +6,7 @@ package frc.robot.subsystems;
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
 
 public class ArmSubsystem extends SubsystemBase {
@@ -13,7 +14,9 @@ public class ArmSubsystem extends SubsystemBase {
   private final CANSparkMax armMotor = new CANSparkMax(0, MotorType.kBrushed);
   /** Creates a new ExampleSubsystem. */
   public ArmSubsystem() {
+    //Sets the current limit to 30 amps and sets the motor to brake mode
     armMotor.setSmartCurrentLimit(30);
+    armMotor.setIdleMode(IdleMode.kBrake);
   }
 
   // This method sets motor movement speed
