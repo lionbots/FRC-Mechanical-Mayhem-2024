@@ -4,16 +4,17 @@
 
 package frc.robot;
 
-import frc.robot.Constants.ControllerConstants;
-import frc.robot.subsystems.ClawSubsystem;
-import frc.robot.commands.ArcadeDriveCommand;
-import frc.robot.commands.ClawCommand;
-import frc.robot.subsystems.DriveBase;
-import frc.robot.commands.MoveArmCommand;
-import frc.robot.subsystems.ArmSubsystem;
-import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
+import frc.robot.Constants.ControllerConstants;
+import frc.robot.commands.ArcadeDriveCommand;
+import frc.robot.commands.Autos;
+import edu.wpi.first.wpilibj2.command.Command;
+import frc.robot.commands.ClawCommand;
+import frc.robot.commands.MoveArmCommand;
+import frc.robot.subsystems.ArmSubsystem;
+import frc.robot.subsystems.ClawSubsystem;
+import frc.robot.subsystems.DriveBase;
 
 /**
  * This class is where the bulk of the robot should be declared. Since Command-based is a
@@ -49,8 +50,9 @@ public class RobotContainer {
   private void configureBindings() {  
     manipulatorController.leftBumper().whileTrue(new ClawCommand(clawSubsystem, false));
     manipulatorController.rightBumper().whileTrue(new ClawCommand(clawSubsystem, true));
-    // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
-    // cancelling on release.
-    // m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());
+  }
+
+  public Command getAutonomousCommand(){
+    return Autos.LeaveAutonomous(driveBaseSubsystem);
   }
 }
