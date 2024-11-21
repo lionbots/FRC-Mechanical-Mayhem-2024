@@ -25,6 +25,7 @@ public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ClawSubsystem clawSubsystem = new ClawSubsystem();
   private final DriveBase driveBaseSubsystem = new DriveBase();
+  private final ArmSubsystem armSubsystem = new ArmSubsystem();
   private final CommandXboxController driverController = new CommandXboxController(ControllerConstants.driverControllerPort);
   private final CommandXboxController manipulatorController = new CommandXboxController(ControllerConstants.manipulatorControllerPort);
 
@@ -32,6 +33,7 @@ public class RobotContainer {
   public RobotContainer() {
     // Configure the trigger bindings
     driveBaseSubsystem.setDefaultCommand(new ArcadeDriveCommand(driveBaseSubsystem, () -> driverController.getRightTriggerAxis(), () -> driverController.getLeftX(), () -> driverController.getLeftTriggerAxis()));
+    armSubsystem.setDefaultCommand(new MoveArmCommand(armSubsystem, () -> manipulatorController.getLeftY()));
     configureBindings();
   }
 
