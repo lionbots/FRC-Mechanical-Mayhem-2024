@@ -23,7 +23,8 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ClawSubsystem clawSubsystem = new ClawSubsystem();
-  private final CommandXboxController m_driverController = new CommandXboxController(ControllerConstants.controllerPort);
+  private final CommandXboxController driverController = new CommandXboxController(ControllerConstants.driverControllerPort);
+  private final CommandXboxController manipulatorController = new CommandXboxController(ControllerConstants.manipulatorControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
@@ -41,8 +42,8 @@ public class RobotContainer {
    * joysticks}.
    */
   private void configureBindings() {  
-    m_driverController.leftBumper().whileTrue(new ClawCommand(clawSubsystem, false));
-    m_driverController.rightBumper().whileTrue(new ClawCommand(clawSubsystem, true));
+    manipulatorController.leftBumper().whileTrue(new ClawCommand(clawSubsystem, false));
+    manipulatorController.rightBumper().whileTrue(new ClawCommand(clawSubsystem, true));
     // Schedule `exampleMethodCommand` when the Xbox controller's B button is pressed,
     // cancelling on release.
     // m_driverController.b().whileTrue(m_exampleSubsystem.exampleMethodCommand());

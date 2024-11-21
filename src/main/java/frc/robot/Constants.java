@@ -14,7 +14,8 @@ package frc.robot;
  */
 public final class Constants {
   public static class ControllerConstants {
-    public static final int controllerPort = 0;
+    public static final int driverControllerPort = 0;
+    public static final int manipulatorControllerPort = 1;
   }
   public static class ClawConstants {
     public static final int MotorPort = 0;
