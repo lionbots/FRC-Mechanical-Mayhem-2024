@@ -45,6 +45,10 @@ public class LeaveStart extends Command {
   // Returns true when the command should end.
   @Override
   public boolean isFinished() {
+    //Stops the autonomous after 1.5 seconds
+    if (timer.get()>1.5){
+        return true;
+    }
     return false;
   }
 }
