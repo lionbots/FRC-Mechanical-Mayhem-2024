@@ -15,11 +15,13 @@ public class LeaveStart extends Command {
   private final Timer timer = new Timer(); //Represents the timer to time our autonomous 
 
   /**
-   * Creates a new ExampleCommand.
+   * Creates a new LeaveStart command and starts the timer
    *
-   * @param subsystem The subsystem used by this command.
+   * @param driveBase The subsystem used by this command.
    */
-  public LeaveStart() {
+  public LeaveStart(DriveBase driveBase) {
+    this.driveBase = driveBase;
+    timer.start();
 
   }
 
