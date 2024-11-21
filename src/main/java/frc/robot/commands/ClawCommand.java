@@ -5,6 +5,7 @@
 package frc.robot.commands;
 
 import frc.robot.subsystems.ClawSubsystem;
+import frc.robot.Constants.ClawConstants;
 import edu.wpi.first.wpilibj2.command.Command;
 
 /** An example command that uses an example subsystem. */
@@ -32,7 +33,7 @@ public class ClawCommand extends Command {
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    m_subsystem.setSpeed(open ? 1 : -1);
+    m_subsystem.setSpeed(open ? ClawConstants.OpenSpeed : ClawConstants.CloseSpeed);
   }
 
   // Called once the command ends or is interrupted.
