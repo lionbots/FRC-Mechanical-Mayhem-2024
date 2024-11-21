@@ -15,20 +15,21 @@ public class LeaveStart extends Command {
   private final Timer timer = new Timer(); //Represents the timer to time our autonomous 
 
   /**
-   * Creates a new LeaveStart command and starts the timer
+   * Creates a new LeaveStart command 
    *
    * @param driveBase The subsystem used by this command.
    */
   public LeaveStart(DriveBase driveBase) {
     this.driveBase = driveBase;
-    timer.start();
+    
 
   }
 
-  // Called when the command is initially scheduled.
+  // Starts the timer when the command is first scheduled
   @Override
-  public void initialize() {}
-
+  public void initialize() {
+    timer.start();
+  }
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
