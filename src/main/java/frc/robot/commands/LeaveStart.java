@@ -11,6 +11,8 @@ import edu.wpi.first.wpilibj.Timer;
 /** An example command that uses an example subsystem. */
 public class LeaveStart extends Command {
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
+  private final DriveBase driveBase; //Represents the drive base subsystem
+  private final Timer timer = new Timer(); //Represents the timer to time our autonomous 
 
   /**
    * Creates a new ExampleCommand.
