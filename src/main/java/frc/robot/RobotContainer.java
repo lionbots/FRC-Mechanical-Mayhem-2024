@@ -6,6 +6,7 @@ package frc.robot;
 
 import frc.robot.Constants.ControllerConstants;
 import frc.robot.subsystems.ClawSubsystem;
+import frc.robot.commands.ArcadeDriveCommand;
 import frc.robot.commands.ClawCommand;
 import frc.robot.subsystems.DriveBase;
 import frc.robot.commands.MoveArmCommand;
@@ -23,12 +24,14 @@ import edu.wpi.first.wpilibj2.command.button.Trigger;
 public class RobotContainer {
   // The robot's subsystems and commands are defined here...
   private final ClawSubsystem clawSubsystem = new ClawSubsystem();
+  private final DriveBase driveBaseSubsystem = new DriveBase();
   private final CommandXboxController driverController = new CommandXboxController(ControllerConstants.driverControllerPort);
   private final CommandXboxController manipulatorController = new CommandXboxController(ControllerConstants.manipulatorControllerPort);
 
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
+    driveBaseSubsystem.setDefaultCommand(new ArcadeDriveCommand(driveBaseSubsystem, () -> driverController.getRightTriggerAxis(), () -> driverController.getLeftX(), () -> driverController.getLeftTriggerAxis()));
     configureBindings();
   }
 
