@@ -36,9 +36,9 @@ public class ArcadeDriveCommand extends Command{
   @Override
   public void execute() {
     if (speed.get() > 0) {
-      driveBase.drive(speed.get(), rotation.get());
+      driveBase.drive(speed.get(), rotation.get()/3);
     } else {
-      driveBase.drive(backwardsSpeed.get() * -1, rotation.get());
+      driveBase.drive(backwardsSpeed.get() * -1, rotation.get()/3);
     }
     // driveBase.drive(speed.get(), rotation.get());
   }

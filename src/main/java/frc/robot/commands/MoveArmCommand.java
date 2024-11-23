@@ -36,7 +36,7 @@ public class MoveArmCommand extends Command {
   @Override
   public void execute() {
     //Call method to move arm and gets the speed from the speedFunction
-    arm.moveMotor(speedFunction.get()/2);
+    arm.moveMotor(speedFunction.get()/4);
     System.out.println("it moved");
     System.out.println("Speed: " + speedFunction.get());
   }
