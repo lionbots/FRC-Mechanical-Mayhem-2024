@@ -8,10 +8,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX;
+import frc.robot.Constants.DriveBaseConstants;
 
 public class DriveBase extends SubsystemBase {
-  private final PWMTalonSRX leftWheel = new PWMTalonSRX(0);
-  private final PWMTalonSRX rightWheel = new PWMTalonSRX(0); // 0 is used as a placeholder for the device number
+  private final PWMTalonSRX leftWheel = new PWMTalonSRX(DriveBaseConstants.leftMotorPort);
+  private final PWMTalonSRX rightWheel = new PWMTalonSRX(DriveBaseConstants.rightMotorPort); 
   private final DifferentialDrive differentialDrive = new DifferentialDrive(leftWheel, rightWheel);
   
 
