@@ -8,10 +8,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import com.revrobotics.CANSparkMax;
 import com.revrobotics.CANSparkBase.IdleMode;
 import com.revrobotics.CANSparkLowLevel.MotorType;
+import frc.robot.Constants.ArmConstants;
 
 public class ArmSubsystem extends SubsystemBase {
   // This represents the motor control for the arm motor
-  private final CANSparkMax armMotor = new CANSparkMax(0, MotorType.kBrushed);
+  private final CANSparkMax armMotor = new CANSparkMax(ArmConstants.armMotorPort, MotorType.kBrushed);
   /** Creates a new ExampleSubsystem. */
   public ArmSubsystem() {
     //Sets the current limit to 30 amps and sets the motor to brake mode
