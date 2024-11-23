@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
 import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.InvertType;
 import frc.robot.Constants.DriveBaseConstants;
 
 public class DriveBase extends SubsystemBase {
@@ -20,7 +21,7 @@ public class DriveBase extends SubsystemBase {
 
   /** Creates a new ExampleSubsystem. */
   public DriveBase(){
-    
+    rightWheel.setInverted(InvertType.InvertMotorOutput);
   }
 
   public void drive(double leftSpeed, double rightSpeed){

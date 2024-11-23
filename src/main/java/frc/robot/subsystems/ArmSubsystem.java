@@ -15,8 +15,8 @@ public class ArmSubsystem extends SubsystemBase {
   private final CANSparkMax armMotor = new CANSparkMax(ArmConstants.armMotorPort, MotorType.kBrushless);
   /** Creates a new ExampleSubsystem. */
   public ArmSubsystem() {
-    //Sets the current limit to 30 amps and sets the motor to brake mode
-    armMotor.setSmartCurrentLimit(30);
+    //Sets the current limit to 50 amps and sets the motor to brake mode
+    armMotor.setSmartCurrentLimit(50);
     armMotor.setIdleMode(IdleMode.kBrake);
   }
 
