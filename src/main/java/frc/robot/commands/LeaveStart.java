@@ -34,7 +34,7 @@ public class LeaveStart extends Command {
   @Override
   public void execute() {
     //Drives the robot backwards
-    driveBase.drive(-1, 0);
+    driveBase.drive(-0.5, -0.5);
   }
 
   // Called once the command ends or is interrupted.
