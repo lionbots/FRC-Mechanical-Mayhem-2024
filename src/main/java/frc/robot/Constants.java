@@ -21,5 +21,10 @@ public final class Constants {
     public static final int MotorPort = 0;
     public static final int OpenSpeed = 1;
     public static final int CloseSpeed = -1;
+  
+  }
+  public static class DriveBaseConstants {
+    public static final int leftMotorPort = 13;
+    public static final int rightMotorPort = 1;
   }
 }
