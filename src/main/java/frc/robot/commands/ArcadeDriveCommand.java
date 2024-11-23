@@ -5,9 +5,10 @@ import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.subsystems.DriveBase;
 
 public class ArcadeDriveCommand extends Command{
-  private Supplier<Double> leftSpeed;
-  private Supplier<Double> rightSpeed;
-  // private Supplier<Double> backwardsSpeed;
+  private Supplier<Double> speed;
+  private Supplier<Double> rotation;
+  // private Supplier<Double> /
+  private Supplier<Double> backwardsSpeed;
 
   @SuppressWarnings({"PMD.UnusedPrivateField", "PMD.SingularField"})
   private final DriveBase driveBase;
@@ -17,11 +18,11 @@ public class ArcadeDriveCommand extends Command{
    *
    * @param subsystem The subsystem used by this command.
    */
-  public ArcadeDriveCommand(DriveBase driveBase, Supplier<Double> leftSpeed, Supplier<Double> rightSpeed /*Supplier<Double> backwardsSpeed*/) {
+  public ArcadeDriveCommand(DriveBase driveBase, Supplier<Double> speed, Supplier<Double> rotation, Supplier<Double> backwardsSpeed) {
     this.driveBase = driveBase;
-    this.leftSpeed = leftSpeed;
-    this.rightSpeed = rightSpeed;
-    // this.backwardsSpeed = backwardsSpeed;
+    this.speed = speed;
+    this.rotation = rotation;
+    this.backwardsSpeed = backwardsSpeed;
 
     // Use addRequirements() here to declare subsystem dependencies.
     addRequirements(driveBase);
@@ -34,12 +35,12 @@ public class ArcadeDriveCommand extends Command{
   // Called every time the scheduler runs while the command is scheduled.
   @Override
   public void execute() {
-    // if (speed.get() > 0) {
-    //   driveBase.drive(speed.get(), rotation.get());
-    // } else {
-    //   driveBase.drive(backwardsSpeed.get() * -1, rotation.get());
-    // }\
-    driveBase.drive(leftSpeed.get(), rightSpeed.get());
+    if (speed.get() > 0) {
+      driveBase.drive(speed.get(), rotation.get());
+    } else {
+      driveBase.drive(backwardsSpeed.get() * -1, rotation.get());
+    }
+    // driveBase.drive(speed.get(), rotation.get());
   }
 
   // Called once the command ends or is interrupted.

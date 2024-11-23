@@ -9,14 +9,14 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 
 import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
-import com.ctre.phoenix.motorcontrol.can.TalonSRX;
+import com.ctre.phoenix.motorcontrol.can.WPI_TalonSRX;
 import com.ctre.phoenix.motorcontrol.InvertType;
 import frc.robot.Constants.DriveBaseConstants;
 
 public class DriveBase extends SubsystemBase {
-  private final TalonSRX leftWheel = new TalonSRX(DriveBaseConstants.leftMotorPort);
-  private final TalonSRX rightWheel = new TalonSRX(DriveBaseConstants.rightMotorPort); 
-  // private final DifferentialDrive differentialDrive = new DifferentialDrive(leftWheel, rightWheel);
+  private final WPI_TalonSRX leftWheel = new WPI_TalonSRX(DriveBaseConstants.leftMotorPort);
+  private final WPI_TalonSRX rightWheel = new WPI_TalonSRX(DriveBaseConstants.rightMotorPort); 
+  private final DifferentialDrive differentialDrive = new DifferentialDrive(leftWheel, rightWheel);
   
 
   /** Creates a new ExampleSubsystem. */
@@ -24,9 +24,8 @@ public class DriveBase extends SubsystemBase {
     rightWheel.setInverted(InvertType.InvertMotorOutput);
   }
 
-  public void drive(double leftSpeed, double rightSpeed){
-    leftWheel.set(TalonSRXControlMode.PercentOutput, leftSpeed);
-    rightWheel.set(TalonSRXControlMode.PercentOutput, rightSpeed);
+  public void drive(double speed, double rotation){
+    differentialDrive.arcadeDrive(speed, rotation);
   }
 
 
