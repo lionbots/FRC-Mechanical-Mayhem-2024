@@ -12,7 +12,7 @@ import com.revrobotics.CANSparkLowLevel.MotorType;
 import com.revrobotics.CANSparkBase.IdleMode;
 
 public class ClawSubsystem extends SubsystemBase {
-  private final CANSparkMax clawMotor = new CANSparkMax(ClawConstants.MotorPort, MotorType.kBrushed);
+  private final CANSparkMax clawMotor = new CANSparkMax(ClawConstants.motorPort, MotorType.kBrushed);
   /** Creates a new ExampleSubsystem. */
   public ClawSubsystem() {
     clawMotor.setSmartCurrentLimit(30);
