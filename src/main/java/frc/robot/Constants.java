@@ -19,9 +19,8 @@ public final class Constants {
   }
   public static class ClawConstants {
     public static final int motorPort = 19;
-    public static final int openSpeed = 1;
-    public static final int closeSpeed = -1;
-  
+    public static final double openSpeed = 0.2;
+    public static final double closeSpeed = -0.2;
   }
   public static class DriveBaseConstants {
     public static final int leftMotorPort = 13;

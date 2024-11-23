@@ -12,7 +12,7 @@ import frc.robot.Constants.ArmConstants;
 
 public class ArmSubsystem extends SubsystemBase {
   // This represents the motor control for the arm motor
-  private final CANSparkMax armMotor = new CANSparkMax(ArmConstants.armMotorPort, MotorType.kBrushed);
+  private final CANSparkMax armMotor = new CANSparkMax(ArmConstants.armMotorPort, MotorType.kBrushless);
   /** Creates a new ExampleSubsystem. */
   public ArmSubsystem() {
     //Sets the current limit to 30 amps and sets the motor to brake mode

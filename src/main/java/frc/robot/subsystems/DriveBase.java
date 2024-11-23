@@ -7,13 +7,15 @@ package frc.robot.subsystems;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
-import edu.wpi.first.wpilibj.motorcontrol.PWMTalonSRX;
+
+import com.ctre.phoenix.motorcontrol.TalonSRXControlMode;
+import com.ctre.phoenix.motorcontrol.can.TalonSRX;
 import frc.robot.Constants.DriveBaseConstants;
 
 public class DriveBase extends SubsystemBase {
-  private final PWMTalonSRX leftWheel = new PWMTalonSRX(DriveBaseConstants.leftMotorPort);
-  private final PWMTalonSRX rightWheel = new PWMTalonSRX(DriveBaseConstants.rightMotorPort); 
-  private final DifferentialDrive differentialDrive = new DifferentialDrive(leftWheel, rightWheel);
+  private final TalonSRX leftWheel = new TalonSRX(DriveBaseConstants.leftMotorPort);
+  private final TalonSRX rightWheel = new TalonSRX(DriveBaseConstants.rightMotorPort); 
+  // private final DifferentialDrive differentialDrive = new DifferentialDrive(leftWheel, rightWheel);
   
 
   /** Creates a new ExampleSubsystem. */
@@ -21,8 +23,9 @@ public class DriveBase extends SubsystemBase {
     
   }
 
-  public void drive(double speed, double rotation){
-    differentialDrive.arcadeDrive(rotation, speed);
+  public void drive(double leftSpeed, double rightSpeed){
+    leftWheel.set(TalonSRXControlMode.PercentOutput, leftSpeed);
+    rightWheel.set(TalonSRXControlMode.PercentOutput, rightSpeed);
   }
 
 

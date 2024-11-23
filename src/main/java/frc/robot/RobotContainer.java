@@ -33,7 +33,7 @@ public class RobotContainer {
   /** The container for the robot. Contains subsystems, OI devices, and commands. */
   public RobotContainer() {
     // Configure the trigger bindings
-    driveBaseSubsystem.setDefaultCommand(new ArcadeDriveCommand(driveBaseSubsystem, () -> driverController.getRightTriggerAxis(), () -> driverController.getLeftX(), () -> driverController.getLeftTriggerAxis()));
+    driveBaseSubsystem.setDefaultCommand(new ArcadeDriveCommand(driveBaseSubsystem, () -> driverController.getLeftY(), () -> driverController.getRightY()));
     armSubsystem.setDefaultCommand(new MoveArmCommand(armSubsystem, () -> manipulatorController.getLeftY()));
     configureBindings();
   }
