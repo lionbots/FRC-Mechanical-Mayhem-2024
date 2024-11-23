@@ -27,4 +27,7 @@ public final class Constants {
     public static final int leftMotorPort = 13;
     public static final int rightMotorPort = 1;
   }
+  public static class ArmConstants {
+    public static final int armMotorPort = 17;
+  }
 }
